@@ -6,7 +6,8 @@
 \usepackage[a4paper, margin=1.8cm]{geometry}
 \usepackage{listings}
 \usepackage{amssymb}
-
+\usepackage{gvv}
+\usepackage{gvv-book}
 \usepackage{amsmath}
 \usepackage{setspace}
 \usepackage{caption}
@@ -22,7 +23,7 @@
 
 \begin{enumerate}
 
-\textbf{Q.1 – Q.5 Carry ONE mark each.}
+\section{\textbf{Q.1 – Q.5 Carry ONE mark each.}}
 
 \item Writing too many things on the \_\_\_\_\_ while teaching could make the students get \_\_\_\_\_.
 \begin{enumerate}
@@ -34,17 +35,29 @@
 
 \hfill (GATE GE 2022)
 
-\item Which one of the following is a representation (not to scale and in bold) of all values of $x$ satisfying the inequality $2 - 5x <= - (6x - 5) / 3$ on the real number line?
+\item Which one of the following is a representation (not to scale and in bold) of all values of $x$ satisfying the inequality $2 - 5x \<= -\frac{6x - 5}{3}$ on the real number line?
 \begin{enumerate}
-    \item \includegraphics[width=\columnwidth]{figs/fig_2.1.png}
-    \item \includegraphics[width=\columnwidth]{figs/fig_2.2.png}
-    \item \includegraphics[width=\columnwidth]{figs/fig_2.3.png}
-    \item \includegraphics[width=\columnwidth]{figs/fig_2.4.png}
+    \item \begin{figure}[H]
+        \includegraphics[width=\columnwidth]{figs/fig_2.1.png}
+        \label{fig:placeholder}
+    \end{figure}
+    \item \begin{figure}[H]
+        \includegraphics[width=\columnwidth]{figs/fig_2.2.png}
+        \label{fig:placeholder}
+    \end{figure}
+    \item \begin{figure}[H]
+        \includegraphics[width=\columnwidth]{figs/fig_2.3.png}
+        \label{fig:placeholder}
+    \end{figure}
+    \item \begin{figure}[H]
+        \includegraphics[width=\columnwidth]{figs/fig_2.4.png}
+        \label{fig:placeholder}
+    \end{figure}
 \end{enumerate}
 
 \hfill (GATE GE 2022)
 
-\item If $f(x) = 2 \ln \sqrt{e^x}$, what is the area bounded by $f(x)$ for the interval $[0, 2]$ on the $x$-axis?
+\item If $f(x) = 2 \ln(\sqrt{e^x})$, what is the area bounded by $f(x)$ for the interval $[0, 2]$ on the $x$-axis?
 \begin{enumerate}
     \item $\frac{1}{2}$
     \item $1$
@@ -54,7 +67,7 @@
 
 \hfill (GATE GE 2022)
 
-\item A person was born on the fifth Monday of February in a particular year. Which one of the following statements is correct?
+\item A person was born on the fifth Monday of February in a particular year. Which one of the following statements is correct based on the above information?
 \begin{enumerate}
     \item The 2nd February of that year is a Tuesday
     \item There will be five Sundays in February in that year
@@ -64,20 +77,37 @@
 
 \hfill (GATE GE 2022)
 
-\item \centering \includegraphics[width=\columnwidth]{figs/fig_5.png} Which one of the groups given below can be assembled to get the shape shown above without overlapping?
+\item
+\begin{figure}[H]
+    \includegraphics[width=\columnwidth]{figs/fig_5.png}
+    \label{fig:placeholder}
+\end{figure}
+Which one of the groups given below can be assembled to get the shape that is shown above using each piece only once without overlapping with each other? (rotation and translation operations may be used).
 \begin{enumerate}
-    \item \includegraphics[width=\columnwidth]{figs/fig_5.1.png}
-    \item \includegraphics[width=\columnwidth]{figs/fig_5.2.png}
-    \item \includegraphics[width=\columnwidth]{figs/fig_5.3.png}
-    \item \includegraphics[width=\columnwidth]{figs/fig_5.4.png}
+    \item \begin{figure}[H]
+        \includegraphics[width=\columnwidth]{figs/fig_5.1.png}
+        \label{fig:placeholder}
+    \end{figure}
+    \item \begin{figure}[H]
+        \includegraphics[width=\columnwidth]{figs/fig_5.2.png}
+        \label{fig:placeholder}
+    \end{figure}
+    \item \begin{figure}[H]
+        \includegraphics[width=\columnwidth]{figs/fig_5.3.png}
+        \label{fig:placeholder}
+    \end{figure}
+    \item \begin{figure}[H]
+        \includegraphics[width=\columnwidth]{figs/fig_5.4.png}
+        \label{fig:placeholder}
+    \end{figure}
 \end{enumerate}
 
 \hfill (GATE GE 2022)
 
-\textbf{Q. 6 – Q. 10 Carry TWO marks each.}
+\section{\textbf{Q. 6 – Q. 10 Carry TWO marks each.}}
 
 \item Fish belonging to species S in the deep sea have ultra-black skin that are extremely black (ultra-black skin). This helps them not only to avoid predators but also sneakily attack their prey. However, having this extra layer of black pigment results in lower collagen on their skin, making their skin more fragile. 
-Which one of the following is the CORRECT logical inference?
+Which one of the following is the CORRECT logical inference based on the information in the above passage?
 \begin{enumerate}
     \item Having ultra-black skin is only advantageous to species S
     \item Species S with lower collagen in their skin are at an advantage because it helps them avoid predators
@@ -97,9 +127,13 @@ Which one of the following is the CORRECT logical inference?
 
 \hfill (GATE GE 2022)
 
-\item Consider the following functions for non-zero positive integers $p$ and $q$.
-\centering \includegraphics[width=\columnwidth]{figs/fig_8.png}
-Which one of the following options is correct?
+\item Consider the following functions for non-zero positive integers, $p$ and $q$.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\columnwidth]{figs/fig_8.png}
+    \label{fig:placeholder}
+\end{figure}
+Which one of the following options is correct based on the above?
 \begin{enumerate}
     \item $f(2,2) = g(2,2)$
     \item $f(g(2,2), 2) < f(2, g(2,2))$
@@ -111,7 +145,11 @@ Which one of the following options is correct?
 
 \item Four cities P, Q, R, S are connected through one-way routes as shown in the figure. The travel time between any two connected cities is one hour. The boxes beside each city name describe the starting time of first train of the day and their frequency of operation. For example, from city P, the first trains of the day start at 8 AM with a frequency of 90 minutes to each of R and S. A person does not spend additional time at any city other than the waiting time for the next connecting train.
 If the person starts from R at 7 AM, visits S and returns to R, what is the minimum time required?
-\centering \includegraphics[width=\columnwidth]{figs/fig_9.png}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\columnwidth]{figs/fig_9.png}
+    \label{fig:placeholder}
+\end{figure}
 \begin{enumerate}
     \item 6 hours 30 minutes
     \item 3 hours 45 minutes
@@ -123,6 +161,11 @@ If the person starts from R at 7 AM, visits S and returns to R, what is the mini
 
 \item Equal sized circular regions are shaded in a square sheet of side 1 cm side length. Two cases, case M and case N, are considered as shown in the figures below. In the case M, four circles are shaded in the square sheet and in the case N, nine circles are shaded in the square sheet as shown.
 What is the ratio of the unshaded regions (M:N)?
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\columnwidth]{figs/fig_10.png}
+    \label{fig:placeholder}
+\end{figure}
 \begin{enumerate}
     \item 2:3
     \item 1:1
@@ -132,8 +175,8 @@ What is the ratio of the unshaded regions (M:N)?
 
 \hfill (GATE GE 2022)
 
-\textbf{PART A: Common FOR ALL CANDIDATES}
-\textbf{Q.11 – Q .27 Carry ONE mark Each}
+\section{\textbf{PART A: Common FOR ALL CANDIDATES}}
+\section{\textbf{Q.11 – Q .27 Carry ONE mark Each}}
 
 \item Most probable value of a quantity:
 \begin{enumerate}
@@ -145,21 +188,21 @@ What is the ratio of the unshaded regions (M:N)?
 
 \hfill (GATE GE 2022)
 
-\item Two surveyors P and Q measured a 20 m distance six times each.
-Surveyor P: 19.97, 20.02, 20.04, 19.98, 19.96, 20.03
-Surveyor P: 19.97, 20.02, 20.04, 19.98, 19.96, 20.03
-Based on accuracy and precision, choose the CORRECT statement:
+\item Two surveyors \textbf{P} and \textbf{Q} measured a 20 m distance six times each, as given below(in m).
+Surveyor \textbf{P}: 19.97, 20.02, 20.04, 19.98, 19.96, 20.03
+Surveyor \textbf{Q}: 20.05, 20.07, 20.05, 20.06, 20.07, 20.07
+On the basis of accuracy and precision of the measured values, choose the CORRECT statement.
 \begin{enumerate}
-    \item P less precise, Q more accurate
-    \item P more precise, Q less accurate
-    \item P more accurate, Q more precise
-    \item P less accurate, Q less precise
+    \item Observed values of Surveyor P are less precise and observed values of Surveyor Q are more accurate. 
+    \item Observed values of Surveyor P are more precise and observed values of Surveyor Q are less accurate.
+    \item Observed values of Surveyor P are more accurate and observed values of Surveyor Q are more precise.
+    \item Observed values of Surveyor P are less accurate and observed values of Surveyor Q are less precise.
 \end{enumerate}
 
 \hfill (GATE GE 2022)
 
-\item Identify the error:
-\begin{enumerate}
+\item Identify the error, which has all the following characteristics:
+\begin{enumerate}[label=\alph*)]
 \item Caused by observer’s misunderstanding and carelessness 
 \item Reading an angle counter-clockwise, but recording it as clockwise angle 
 \item Sighting the wrong target 
@@ -175,17 +218,17 @@ Based on accuracy and precision, choose the CORRECT statement:
 
 \hfill (GATE GE 2022)
 
-\item Electromagnetic Spectrum can be broadly divided as (in increasing wavelength):
+\item Electromagnetic Spectrum can be broadly divided as (in order of increasing wavelength):
 \begin{enumerate}
-    \item X-rays, Gamma, Infrared, Ultraviolet, Visible, Radiowave, Microwave
-    \item Gamma, X-rays, Radiowave, Microwave, Ultraviolet, Infrared, Visible
-    \item X-rays, Gamma, Microwave, Radiowave, Ultraviolet, Infrared, Visible
-    \item Gamma, X-rays, Ultraviolet, Visible, Infrared, Microwave, Radiowave
+    \item X-rays, Gamma rays, Infrared, Ultraviolet, Visible, Radiowave, Microwave
+    \item Gamma rays, X-rays, Radiowave, Microwave, Ultraviolet, Infrared, Visible
+    \item X-rays, Gamma rays, Microwave, Radiowave, Ultraviolet, Infrared, Visible
+    \item Gamma rays, X-rays, Ultraviolet, Visible, Infrared, Microwave, Radiowave
 \end{enumerate}
 
 \hfill (GATE GE 2022)
 
-\item Relationship between wavelength $\lambda$, frequency $\nu$, and velocity $c$ of EM waves:
+\item Relationship between wavelength ($\lambda$), frequency ($\nu$), and velocity ($c$) of EM waves is:
 \begin{enumerate}
     \item $c = \nu^2 / \lambda$
     \item $c = \nu / \lambda$
@@ -205,7 +248,7 @@ Based on accuracy and precision, choose the CORRECT statement:
 
 \hfill (GATE GE 2022)
 
-\item Component of GPS signal deciphered by all types of GPS receivers:
+\item Component of GPS signal deciphered by all types of GPS receivers is:
 \begin{enumerate}
     \item Coarse-Acquisition code
     \item Precision code
@@ -215,7 +258,7 @@ Based on accuracy and precision, choose the CORRECT statement:
 
 \hfill (GATE GE 2022)
 
-\item For 3D-positioning, GLobal Navigational Satellite System (GNSS) requires a minimum of \_\_\_ satellites.
+\item For 3D-positioning, GLobal Navigational Satellite System (GNSS) requires a minimum of \_\_ satellites.
 \begin{enumerate}
     \item 3
     \item 4
@@ -285,7 +328,7 @@ Based on accuracy and precision, choose the CORRECT statement:
 
 \hfill (GATE GE 2022)
 
-\item In GIS, \_\_\_\_ triangulation is a proximal method that satisfies the requirement that a circle drawn through the three nodes of a triangle contains no other node.
+\item In GIS, \_\_\_\_\_\_ triangulation is a proximal method that satisfies the requirement that a circle drawn through the three nodes of a triangle contains no other node.
 \begin{enumerate}
     \item Dalhousie
     \item Delaunay
@@ -305,11 +348,13 @@ Based on accuracy and precision, choose the CORRECT statement:
 
 \hfill (GATE GE 2022)
 
-\item For the following observation equation $2\alpha = 124^\circ 52' 22''$ weight 4, the weight of $\alpha / 3$ is \_\_\_ (in integer).
+\item For the following observation equation
+$2\alpha = 124^\circ 52' 22''$        weight 4,
+the weight of $\frac{\alpha}{3}$ is \_\_\_ (in integer).
 
 \hfill (GATE GE 2022)
 
-\textbf{Q.28 – Q .46 Carry TWO marks each}
+\section{\textbf{Q.28 – Q .46 Carry TWO marks each}}
 
 \item Following observation equations are obtained in a survey task:  
 $x + y = 3$  
@@ -369,7 +414,7 @@ The corrected values of the angles P, Q and R are:
 
 \hfill (GATE GE 2022)
 
-\item The spatial resolution of a satellite image P is 80 m and another satellite image Q is 20 m; each of 512 × 512 pixel size. Choose the CORRECT option(s):
+\item The spatial resolution of a satellite image \textbf{P} is 80 m and another satellite image \textbf{Q} is 20 m; each of 512 × 512 pixel size. Choose the CORRECT option(s):
 \begin{enumerate}
     \item Image P will cover four times the area of image Q.
     \item Image P will cover sixteen times the area of image Q.
@@ -457,7 +502,7 @@ $6x - 7y + 114 = 0$
 
 \hfill (GATE GE 2022)
 
-\item Height of a station determined by GNSS is 284.097 m and the geoid height is –30.052 m. The elevation is \_\_\_ m (round off to 3 decimal places).
+\item Height of a station determined by Global Navigational Satellite System (GNSS) is 284.097 m and the geoid height of the station is –30.052 m. The elevation of the station is \_\_\_ m (round off to 3 decimal places).
 
 \hfill (GATE GE 2022)
 
@@ -465,12 +510,12 @@ $6x - 7y + 114 = 0$
 
 \hfill (GATE GE 2022)
 
-\item If a 1:50,000 scale map is digitized to an accuracy of ± 0.5 mm, the level of error in ground is ± \_\_\_ m (in integer).
+\item If a 1:50,000 scale map is digitized to an accuracy of ± 0.5 mm, the level of error that might be expected in ground is ± \_\_\_ m (in integer).
 
 \hfill (GATE GE 2022)
 
-\textbf{PART B: FOR Section I CANDIDATES ONLY}
-\textbf{Q.47 – Q.54 Carry ONE mark Each}
+\section{\textbf{PART B: FOR Section I CANDIDATES ONLY}}
+\section{\textbf{Q.47 – Q.54 Carry ONE mark Each}}
 
 \item The main principle of Surveying is to work from
 \begin{enumerate}
@@ -546,7 +591,7 @@ $6x - 7y + 114 = 0$
 
 \hfill (GATE GE 2022)
 
-\textbf{Q.55 – Q .65 Carry TWO marks Each}
+\section{\textbf{Q.55 – Q .65 Carry TWO marks Each}}
 
 \item In a closed traverse, the sum of the latitudes is 1.39 m and the sum of the departures is 2.17 m. The Length and Whole Circle Bearing of the closing error are
 \begin{enumerate}
@@ -628,8 +673,8 @@ $6x - 7y + 114 = 0$
 
 \hfill (GATE GE 2022)
 
-\textbf{PART B: FOR Section II CANDIDATES ONLY }
-\textbf{Q.66 – Q.73 Carry ONE mark Each}
+\section{\textbf{PART B: FOR Section II CANDIDATES ONLY }}
+\section{\textbf{Q.66 – Q.73 Carry ONE mark Each}}
 
 \item The correlation coefficient between two bands of remote sensing data that would yield good classification is
 \begin{enumerate}
@@ -705,7 +750,7 @@ $6x - 7y + 114 = 0$
 
 \hfill (GATE GE 2022)
 
-\textbf{Q.74 – Q.84 Carry TWO marks Each}
+\section{\textbf{Q.74 – Q.84 Carry TWO marks Each}}
 
 \item In a Landsat-8 scene, digital number (DN) values of a pixel in band-4, band-5 and band-10 are 80, 100 and 30, respectively. What would be the NDVI value for the same pixel (round off to 3 decimal places)?
 \begin{enumerate}
@@ -748,7 +793,11 @@ $6x - 7y + 114 = 0$
 \hfill (GATE GE 2022)
 
 \item Match the CORRECT option(s) for the types of filters given in (I), (II), (III), and (IV) with their kernels given in (P), (Q), (R) and (S).
-\centering \includegraphics[width=\columnwidth]{figs/fig_78.png}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\columnwidth]{figs/fig_78.png}
+    \label{fig:placeholder}
+\end{figure}
 \begin{enumerate}
     \item I - P and II - Q
     \item III - R and IV - S
@@ -779,7 +828,11 @@ $6x - 7y + 114 = 0$
 \hfill (GATE GE 2022)
 
 \item The overall image classification accuracy (in percentage) calculated from the following error matrix is \_\_\_ (in integer).
-\centering \includegraphics[width=\columnwidth]{figs/fig_81.png}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\columnwidth]{figs/fig_81.png}
+    \label{fig:placeholder}
+\end{figure}
 
 \hfill (GATE GE 2022)
 
