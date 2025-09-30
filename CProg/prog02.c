@@ -7,5 +7,4 @@ float result(int abs, int total){
 
 int main(void){
         printf("%f%%", result(8, 32));
-        return 0;
 }
