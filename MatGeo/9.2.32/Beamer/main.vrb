@@ -1,0 +1,35 @@
+\frametitle{File: plot.py}
+\begin{lstlisting}[language=Python]
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Define the functions
+def curve1(x):
+    return np.sqrt(9 * x)
+
+def curve2(x):
+    return x
+
+# Define the x-range
+x = np.linspace(0, 10, 500)
+
+# Plot the curves
+plt.figure(figsize=(8, 6))
+plt.plot(x, curve1(x), label=r"$y^2 = 9x$", color="blue")
+plt.plot(x, curve2(x), label=r"$y = x$", color="red")
+
+# Fill the region between the curves
+plt.fill_between(x, curve2(x), curve1(x), where=(curve2(x) <= curve1(x)), color="gray", alpha=0.5)
+
+# Add labels and title
+plt.title("Region between $y^2 = 9x$ and $y = x$", fontsize=14)
+plt.xlabel("$x$", fontsize=12)
+plt.ylabel("$y$", fontsize=12)
+plt.legend()
+
+# Show the plot
+plt.grid(True)
+plt.xlim(-0.5, 10)
+plt.ylim(-0.5, 10)
+plt.show()
+\end{lstlisting}
