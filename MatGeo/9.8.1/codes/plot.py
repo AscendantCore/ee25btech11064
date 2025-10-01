@@ -1,0 +1,33 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Define the equation of the line
+def line(x):
+    return -x / 3
+# Create x values for the line
+x_vals = np.linspace(-1, 7, 400)
+y_vals = line(x_vals)
+
+# Circle equation
+theta = np.linspace(0, 2 * np.pi, 400)
+x_circle = 3 + np.sqrt(10) * np.cos(theta)
+y_circle = -1 + np.sqrt(10) * np.sin(theta)
+
+# Plot the line and the circle and the center
+plt.figure(figsize=(8, 6))
+plt.plot(x_vals, y_vals, label=r'$x + 3y = 0$', color='blue')  # Line equation
+plt.plot(x_circle, y_circle, label=r'$x^2 + y^2 - 6x + 2y = 0$', color='red')  # Circle equation
+plt.scatter(3, -1, color='green', zorder=5)  # Green dot for the center
+plt.text(3, -1, '  C (3, -1)', fontsize=12, verticalalignment='top', horizontalalignment='right')
+
+# Setting up the plot
+plt.axhline(0, color='black',linewidth=0.5)
+plt.axvline(0, color='black',linewidth=0.5)
+plt.gca().set_aspect('equal', adjustable='box')  # To ensure the circle looks like a circle
+plt.legend()
+plt.title("Graph of $x + 3y = 0$ and $x^2 + y^2 - 6x + 2y = 0$")
+plt.xlabel("x-axis")
+plt.ylabel("y-axis")
+plt.grid(True)
+plt.show()
+
