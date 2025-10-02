@@ -1,0 +1,26 @@
+\frametitle{File: plot.py}
+\begin{lstlisting}[language=Python]
+# Plot the points A, B, C, D, E, F
+ax.plot(A[0], A[1], 'go', ms=4)  # A
+ax.plot(B[0], B[1], 'go', ms=4)  # B
+ax.plot(C[0], C[1], 'go', ms=4)  # C
+ax.plot(D[0], D[1], 'ro', ms=4)  # D
+ax.plot(E[0], E[1], 'ro', ms=4)  # E
+ax.plot(F[0], F[1], 'ro', ms=4)  # F
+
+# Labels for points
+ax.text(A[0], A[1], 'A', fontsize=12, ha='right', va='top')
+ax.text(B[0], B[1], 'B', fontsize=12, ha='left', va='top')
+ax.text(C[0], C[1], 'C', fontsize=12, ha='center', va='bottom')
+ax.text(D[0], D[1]-0.1, 'D', fontsize=12, ha='center', va='top')
+ax.text(E[0], E[1], 'E', fontsize=12, ha='left', va='bottom')
+ax.text(F[0], F[1], 'F', fontsize=12, ha='right', va='bottom')
+
+# Title and showing the plot
+ax.set_aspect('equal')
+ax.grid()
+plt.xlim(-0.5, 5.5)
+plt.ylim(-0.5, 4.5)
+plt.title("Triangle ABC with Medial Triangle DEF")
+plt.show()
+\end{lstlisting}

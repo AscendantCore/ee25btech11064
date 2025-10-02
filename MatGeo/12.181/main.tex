@@ -1,0 +1,104 @@
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal]{IEEEtran}
+\usepackage[a4paper, margin=10mm, onecolumn]{geometry}
+\usepackage{lmodern} % Ensure lmodern is loaded for pdflatex
+\usepackage{tfrupee} % Include tfrupee package
+
+\setlength{\headheight}{1cm} % Set the height of the header box
+\setlength{\headsep}{0mm}  % Set the distance between the header box and the top of the text
+
+\usepackage{gvv-book}
+\usepackage{gvv}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+% \usepackage{gvv}                                        
+\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+
+\begin{document}
+
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+
+\title{12.181}
+\author{EE25BTECH11064 - Yojit Manral}
+
+\maketitle
+% \maketitle
+% \newpage
+% \bigskip
+{\let\newpage\relax\maketitle}
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\setlength{\intextsep}{10pt} % Space between text and float
+
+\textbf{Question:}\\
+Consider the matrix $\vec{P} = \myvec{0&1\\-2&-3}$. The value of $e^{\vec{P}}$ is
+\begin{enumerate}[label=(\alph*)]
+\begin{multicols}{2}
+    \item $\myvec{2e^{-2}-3e^{-1}&e^{-1}-e^{-2}\\2e^{-2}-2e^{-1}&5e^{-2}-e^{-1}}$
+    \item $\myvec{e^{-1}+e^{-2}&2e^{-2}-e^{-1}\\2e^{-1}-4e^{-2}&3e^{-1}+e^{-2}}$
+    \item $\myvec{5e^{-2}-6e^{-1}&3e^{-1}-e^{-2}\\2e^{-2}-6e^{-1}&4e^{-2}-e^{-1}}$
+    \item $\myvec{2e^{-1}-e^{-2}&e^{-1}-e^{-2}\\-2e^{-1}+2e^{-2}&-e^{-1}+2e^{-2}}$
+\end{multicols}
+\end{enumerate}
+
+\textbf{Solution:}\\
+$\rightarrow$ To find $e^{\vec{P}}$, we first need to diagonalize the matrix $\vec{P}$ by finding the eigenvalues and their corresponding eigenvectors. So, we use
+\begin{align}
+    |\vec{P} - \lambda\vec{I}| &= 0 \\
+    \left|\begin{array}{cc}-\lambda&1\\-2&-3-\lambda\end{array}\right| &= 0 \\
+    \lambda^2 + 3\lambda + 2 &= 0 \\
+    \implies \lambda_1 = -1\text{ and }\lambda_2 &= -2
+\end{align}
+$\rightarrow$ To find the eigenvector for $\lambda_1$, we use the augmented matrix
+\begin{align}
+    \left(\begin{array}{cc|c}1&1&0\\-2&-2&0\end{array}\right) \xrightarrow{R_2 \leftrightarrow R_2 + 2R_1} \left(\begin{array}{cc|c}1&1&0\\0&0&0\end{array}\right) \\
+    \implies \vec{v_1} = \myvec{1\\-1}
+\end{align}
+$\rightarrow$ To find the eigenvector for $\lambda_2$, we use the augmented matrix
+\begin{align}
+    \left(\begin{array}{cc|c}2&1&0\\-2&-1&0\end{array}\right) \xrightarrow{R_2 \leftrightarrow R_2 + R_1} \left(\begin{array}{cc|c}2&1&0\\0&0&0\end{array}\right) \\
+    \implies \vec{v_2} = \myvec{1\\-2}
+\end{align}
+$\rightarrow$ Thus, after diagonalization, we get
+\begin{align}
+    \vec{P} &= \vec{Q}\vec{D}\vec{Q}^{-1} \\
+    \vec{Q} &= \myvec{\vec{v_1}&\vec{v_2}} = \myvec{1&1\\-1&-2} \\
+    \vec{D} &= \myvec{\lambda_1&0\\0&\lambda_2} = \myvec{-1&0\\0&-2} \\
+    \vec{Q}^{-1} &= \myvec{2&1\\-1&-1}
+\end{align}
+$\rightarrow$ Now, using property of matrix exponential
+\begin{align}
+    e^{\vec{P}} &= \vec{Q}e^{\vec{D}}\vec{Q}^{-1} \\
+    &= \myvec{1&1\\-1&-2}\myvec{e^{-1}&0\\0&e^{-2}}\myvec{2&1\\-1&-1} \\
+    &= \myvec{e^{-1}&e^{-2}\\-e^{-1}&-2e^{-2}}\myvec{2&1\\-1&-1} \\
+    e^{\vec{P}} &= \myvec{2e^{-1}-e^{-2}&e^{-1}-e^{-2}\\-2e^{-1}+2e^{-2}&-e^{-1}+2e^{-2}}
+\end{align}
+$\rightarrow$ Therefore, (d) $\myvec{2e^{-1}-e^{-2}&e^{-1}-e^{-2}\\-2e^{-1}+2e^{-2}&-e^{-1}+2e^{-2}}$ is the correct option.
+\end{document}

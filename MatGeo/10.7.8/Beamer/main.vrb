@@ -1,0 +1,21 @@
+\frametitle{File: plot.py}
+\begin{lstlisting}[language=Python]
+# Set axes limits
+ax.set_xlim(-5, 5)
+ax.set_ylim(-3.5, 3.5)
+
+# Add labels and title
+ax.set_xlabel("x")
+ax.set_ylabel("y")
+ax.axhline(0, color='black', linewidth=1)
+ax.axvline(0, color='black', linewidth=1)
+ax.set_title("Ellipse, Latera Recta, and Tangents")
+
+# Show grid
+ax.grid(True)
+
+# Show the plot
+plt.legend(handles=[ellipse, latera_recta, tangents], labels=['Ellipse: $\\frac{x^2}{9} + \\frac{y^2}{5} = 1$', 'Latera Recta', 'Tangents'])
+plt.gca().set_aspect('equal', adjustable='box')
+plt.show()
+\end{lstlisting}
