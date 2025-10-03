@@ -80,34 +80,52 @@ Show that the points $\brak{7,10}$, $\brak{-2,5}$ and $\brak{3,4}$ are vertices 
   \caption{List of Points}
   \label{Table_1}
 \end{table}
-$\rightarrow$ Let
+
+$\rightarrow$ The equation of the sides are given as
 \begin{align}
-    \angle{A} &= \angle{BAC}\\
-    \angle{B} &= \angle{CBA}\\
-    \angle{C} &= \angle{ACB}
+    \vec{B}-\vec{A}=\myvec{-9\\-5} && \vec{C}-\vec{B}=\myvec{5\\-1} && \vec{A}-\vec{C}=\myvec{4\\6}
+\end{align}
+$\rightarrow$ The medians $\vec{D}$, $\vec{E}$ and $\vec{F}$ of the triangle are
+\begin{align}
+    \vec{D} = \frac{\vec{A}+\vec{B}}{2} = \myvec{5/2\\15/2} &&
+    \vec{E} = \frac{\vec{B}+\vec{C}}{2} = \myvec{1/2\\9/2} &&
+    \vec{F} = \frac{\vec{C}+\vec{A}}{2} = \myvec{5\\7}
 \end{align}
 \end{frame}
 
 \begin{frame}{Solution}
+\begin{enumerate}[label=(\Alph*)]
+\item {
+For an isosceles triangle, median to the base is also the perpendicular bisector. Using this property
 \begin{align}
-    \vec{a} = \vec{C} - \vec{B} &= \myvec{5\\-1}\\
-    \vec{b} = \vec{A} - \vec{C} &= \myvec{4\\6}\\
-    \vec{c} = \vec{B} - \vec{A} &= \myvec{-9\\-5}
+    (\vec{C}-\vec{D})^T(\vec{B}-\vec{A}) &= \myvec{1/2&-7/2}\myvec{-9\\-5} = 13 \neq 0 \\
+    (\vec{A}-\vec{E})^T(\vec{C}-\vec{B}) &= \myvec{13/2&11/2}\myvec{5\\-1} = 27 \neq 0 \\
+    (\vec{B}-\vec{F})^T(\vec{A}-\vec{C}) &= \myvec{-7&-2}\myvec{4\\6} = -40 \neq 0
 \end{align}
-$\rightarrow$ Then the cosines of the angles are
-\begin{align}
-    \cos{A} = -\frac{\vec{b}^{T}\vec{c}}{\norm{\vec{b}}\norm{\vec{c}}} = \frac{66}{\sqrt{52}\sqrt{106}} = 0.889\\
-    \cos{B} = -\frac{\vec{c}^{T}\vec{a}}{\norm{\vec{c}}\norm{\vec{a}}} = \frac{40}{\sqrt{106}\sqrt{26}} = 0.762\\
-    \cos{C} = -\frac{\vec{a}^{T}\vec{b}}{\norm{\vec{a}}\norm{\vec{b}}} = -\frac{14}{\sqrt{26}\sqrt{52}} = -0.381
-\end{align}
+$\rightarrow$ Since none of the sides satisfy this property, the triangle is not isosceles.
+}
+\end{enumerate}
 \end{frame}
 
 \begin{frame}{Solution}
-$\rightarrow$ As none of the cosines are equal, $\triangle$ABC is not isosceles. Also, since $\cos{C}$ is negative, $\triangle$ABC forms an obtuse angled triangle. \\
-$\implies$ $\triangle$ABC is neither isosceles nor right-angled triangle.
+\begin{enumerate}[label=(\Alph*)]\setcounter{enumi}{1}
+\item {
+For a right triangle, dot product of the perpendicular sides must be zero.
+\begin{align}
+    (\vec{B}-\vec{A})^T(\vec{C}-\vec{B})&=\myvec{-9&-5}\myvec{5\\-1} = -40 \neq 0 \\
+    (\vec{C}-\vec{B})^T(\vec{A}-\vec{C})&=\myvec{5&-1}\myvec{4\\6} = 14 \neq 0 \\
+    (\vec{A}-\vec{C})^T(\vec{B}-\vec{A})&=\myvec{4&6}\myvec{-9\\-5} = -66 \neq 0
+\end{align}
+$\rightarrow$ Since none of the dot products is zero, no two sides are perpendicular, and the triangle is not right angled.
+}
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Solution}
+$\longrightarrow$ From (A) and (B), we get that $\triangle ABC$ is not isosceles right triangle.
 \begin{figure}[h!]
    \centering
-   \includegraphics[width=0.5\linewidth]{figs/01.png}
+   \includegraphics[width=0.75\linewidth]{figs/01.png}
    \caption{Plot of $\triangle$ABC}
    \label{Plot_1}
 \end{figure}
@@ -159,60 +177,49 @@ print(result.stdout)
 \begin{frame}[fragile]{File: plot.py}
 \begin{lstlisting}[language=Python]
 import matplotlib.pyplot as plt
-import numpy as np
 
-# Points A(7,10), B(-2,5), C(3,4)
-A = np.array([7, 10])
-B = np.array([-2, 5])
-C = np.array([3, 4])
+# Vertices of the triangle
+A = (7, 10)
+B = (-2, 5)
+C = (3, 4)
 
-# Function to calculate distance between two points
-def distance(p1, p2):
-    return np.sqrt((p2[0] - p1[0])**2 + (p2[1] - p1[1])**2)
+# Midpoints of sides
+D = ((A[0] + B[0]) / 2, (A[1] + B[1]) / 2)
+E = ((B[0] + C[0]) / 2, (B[1] + C[1]) / 2)
+F = ((A[0] + C[0]) / 2, (A[1] + C[1]) / 2)
 
-# Calculate distances
-AB = distance(A, B)
-BC = distance(B, C)
-CA = distance(C, A)
+# Plotting the triangle and midpoints
+fig, ax = plt.subplots()
 
-# Plotting the triangle
-plt.figure(figsize=(6, 6))
-plt.plot([A[0], B[0]], [A[1], B[1]], 'b-', label="AB")
-plt.plot([B[0], C[0]], [B[1], C[1]], 'b-', label="BC")
-plt.plot([C[0], A[0]], [C[1], A[1]], 'b-', label="CA")
+# Plot the triangle ABC
+triangle = plt.Polygon([A, B, C], closed=True, fill=None, edgecolor='black', label='Triangle ABC')
 
-# Annotating points
-plt.text(A[0], A[1], 'A(7,10)', fontsize=12, ha='right', va='bottom')
-plt.text(B[0], B[1], 'B(-2,5)', fontsize=12, ha='right', va='top')
-plt.text(C[0], C[1] - 0.2, 'C(3,4)', fontsize=12, ha='center', va='top')
-
-# Highlighting the vertices
-plt.scatter([A[0], B[0], C[0]], [A[1], B[1], C[1]], color='red')
+# Plot the medians AD, BE, CF
+plt.plot([A[0], E[0]], [A[1], E[1]], color='g', label='Median AE')
+plt.plot([B[0], F[0]], [B[1], F[1]], color='r', label='Median BF')
+plt.plot([C[0], D[0]], [C[1], D[1]], color='b', label='Median CD')
 \end{lstlisting}
 \end{frame}
 
 \begin{frame}[fragile]{File: plot.py}
 \begin{lstlisting}[language=Python]
-# Displaying distances on the plot with offset adjustments
-mid_AB = (A + B) / 2
-mid_BC = (B + C) / 2
-mid_CA = (C + A) / 2
+# Plot the midpoints D, E, F
+ax.scatter(*zip(A, B, C, D, E, F), color='gray')
+ax.text(A[0], A[1], 'A', fontsize=12, ha='left', va='top', color='g')
+ax.text(B[0], B[1], 'B', fontsize=12, ha='right', va='top', color='r')
+ax.text(C[0], C[1], 'C', fontsize=12, ha='left', va='top', color='b')
+ax.text(D[0], D[1], 'D', fontsize=12, ha='right', va='bottom', color='b')
+ax.text(E[0], E[1], 'E', fontsize=12, ha='right', va='bottom', color='g')
+ax.text(F[0], F[1], 'F', fontsize=12, ha='right', va='bottom', color='r')
 
-# Adjusting text placement for better spacing
-plt.text(mid_AB[0], mid_AB[1] + 0.6, f'{AB:.2f}', fontsize=12, color='blue', ha='center')
-plt.text(mid_BC[0], mid_BC[1] - 0.6, f'{BC:.2f}', fontsize=12, color='blue', ha='center')
-plt.text(mid_CA[0], mid_CA[1] - 1.3, f'{CA:.2f}', fontsize=12, color='blue', ha='center')
-
-# Setting plot limits and labels
-plt.xlim(-5, 10)
-plt.ylim(0, 12)
-plt.gca().set_aspect('equal', adjustable='box')
-plt.xlabel('x')
-plt.ylabel('y')
-plt.title('Triangle Check')
-
-# Show the plot
+# Labels and settings
+ax.add_patch(triangle)
+ax.set_aspect('equal', adjustable='box')
+ax.set_xlabel('x')
+ax.set_ylabel('y')
+plt.title('Triangle ABC with Midpoints and Medians')
 plt.grid(True)
+plt.legend()
 plt.show()
 \end{lstlisting}
 \end{frame}

@@ -1,24 +1,21 @@
 \frametitle{File: plot.py}
 \begin{lstlisting}[language=Python]
-# Displaying distances on the plot with offset adjustments
-mid_AB = (A + B) / 2
-mid_BC = (B + C) / 2
-mid_CA = (C + A) / 2
+# Plot the midpoints D, E, F
+ax.scatter(*zip(A, B, C, D, E, F), color='gray')
+ax.text(A[0], A[1], 'A', fontsize=12, ha='left', va='top', color='g')
+ax.text(B[0], B[1], 'B', fontsize=12, ha='right', va='top', color='r')
+ax.text(C[0], C[1], 'C', fontsize=12, ha='left', va='top', color='b')
+ax.text(D[0], D[1], 'D', fontsize=12, ha='right', va='bottom', color='b')
+ax.text(E[0], E[1], 'E', fontsize=12, ha='right', va='bottom', color='g')
+ax.text(F[0], F[1], 'F', fontsize=12, ha='right', va='bottom', color='r')
 
-# Adjusting text placement for better spacing
-plt.text(mid_AB[0], mid_AB[1] + 0.6, f'{AB:.2f}', fontsize=12, color='blue', ha='center')
-plt.text(mid_BC[0], mid_BC[1] - 0.6, f'{BC:.2f}', fontsize=12, color='blue', ha='center')
-plt.text(mid_CA[0], mid_CA[1] - 1.3, f'{CA:.2f}', fontsize=12, color='blue', ha='center')
-
-# Setting plot limits and labels
-plt.xlim(-5, 10)
-plt.ylim(0, 12)
-plt.gca().set_aspect('equal', adjustable='box')
-plt.xlabel('x')
-plt.ylabel('y')
-plt.title('Triangle Check')
-
-# Show the plot
+# Labels and settings
+ax.add_patch(triangle)
+ax.set_aspect('equal', adjustable='box')
+ax.set_xlabel('x')
+ax.set_ylabel('y')
+plt.title('Triangle ABC with Midpoints and Medians')
 plt.grid(True)
+plt.legend()
 plt.show()
 \end{lstlisting}

@@ -58,7 +58,7 @@
 \setlength{\intextsep}{10pt} % Space between text and float
 
 \textbf{Question:}\\
-Show that the points $\brak{7,10}$, $\brak{-2,5}$ and $\brak{3,4}$ are vertices of an isosceles right triangle.\\
+Show that the points $\brak{7,10}$, $\brak{-2,5}$ and $\brak{3,4}$ are vertices of an isosceles right triangle.
 
 \textbf{Solution:}\\
 \begin{table}[h!]    
@@ -67,28 +67,40 @@ Show that the points $\brak{7,10}$, $\brak{-2,5}$ and $\brak{3,4}$ are vertices 
   \caption{List of Points}
   \label{Table_1}
 \end{table} \\
-$\rightarrow$ Let
+$\rightarrow$ The equation of the sides are given as
 \begin{align}
-    \vec{a} = \vec{C} - \vec{B} &= \myvec{5\\-1}\\
-    \vec{b} = \vec{A} - \vec{C} &= \myvec{4\\6}\\
-    \vec{c} = \vec{B} - \vec{A} &= \myvec{-9\\-5}\\
-    \angle{A} &= \angle{BAC}\\
-    \angle{B} &= \angle{CBA}\\
-    \angle{C} &= \angle{ACB}
+    \vec{B}-\vec{A}=\myvec{-9\\-5} && \vec{C}-\vec{B}=\myvec{5\\-1} && \vec{A}-\vec{C}=\myvec{4\\6}
 \end{align}
-$\rightarrow$ Then the cosines of the angles are
+$\rightarrow$ The medians $\vec{D}$, $\vec{E}$ and $\vec{F}$ of the triangle are
 \begin{align}
-    \cos{A} = -\frac{\vec{b}^{T}\vec{c}}{\norm{\vec{b}}\norm{\vec{c}}} = \frac{66}{\sqrt{52}\sqrt{106}} = 0.889\\
-    \cos{B} = -\frac{\vec{c}^{T}\vec{a}}{\norm{\vec{c}}\norm{\vec{a}}} = \frac{40}{\sqrt{106}\sqrt{26}} = 0.762\\
-    \cos{C} = -\frac{\vec{a}^{T}\vec{b}}{\norm{\vec{a}}\norm{\vec{b}}} = -\frac{14}{\sqrt{26}\sqrt{52}} = -0.381 \\
-    \notag
+    \vec{D} = \frac{\vec{A}+\vec{B}}{2} = \myvec{5/2\\15/2} &&
+    \vec{E} = \frac{\vec{B}+\vec{C}}{2} = \myvec{1/2\\9/2} &&
+    \vec{F} = \frac{\vec{C}+\vec{A}}{2} = \myvec{5\\7}
 \end{align}
-$\rightarrow$ As none of the cosines are equal, $\triangle$ABC is not isosceles. Also, since $\cos{C}$ is negative, $\triangle$ABC forms an obtuse angled triangle. \\
-$\implies$ $\triangle$ABC is neither isosceles nor right-angled triangle.
-
+\begin{enumerate}[label=(\alph*)]
+\item {
+For an isosceles triangle, median to the base is also the perpendicular bisector. Using this property
+\begin{align}
+    (\vec{C}-\vec{D})^T(\vec{B}-\vec{A}) &= \myvec{1/2&-7/2}\myvec{-9\\-5} = 13 \neq 0 \\
+    (\vec{A}-\vec{E})^T(\vec{C}-\vec{B}) &= \myvec{13/2&11/2}\myvec{5\\-1} = 27 \neq 0 \\
+    (\vec{B}-\vec{F})^T(\vec{A}-\vec{C}) &= \myvec{-7&-2}\myvec{4\\6} = -40 \neq 0
+\end{align}
+$\rightarrow$ Since none of the sides satisfy this property, the triangle is not isosceles.
+}
+\item {
+For a right triangle, dot product of the perpendicular sides must be zero.
+\begin{align}
+    (\vec{B}-\vec{A})^T(\vec{C}-\vec{B})&=\myvec{-9&-5}\myvec{5\\-1} = -40 \neq 0 \\
+    (\vec{C}-\vec{B})^T(\vec{A}-\vec{C})&=\myvec{5&-1}\myvec{4\\6} = 14 \neq 0 \\
+    (\vec{A}-\vec{C})^T(\vec{B}-\vec{A})&=\myvec{4&6}\myvec{-9\\-5} = -66 \neq 0
+\end{align}
+$\rightarrow$ Since none of the dot products is zero, no two sides are perpendicular, and the triangle is not right angled.
+}
+\end{enumerate}
+$\longrightarrow$ From proofs (a) and (b) above, we can conclude that $\triangle ABC$ is not an isosceles right triangle.
 \begin{figure}[h!]
    \centering
-   \includegraphics[width=0.7\linewidth]{figs/01.png}
+   \includegraphics[width=\linewidth]{figs/01.png}
    \caption{Plot of $\triangle$ABC}
    \label{Plot_1}
 \end{figure}

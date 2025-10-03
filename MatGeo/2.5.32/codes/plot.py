@@ -1,53 +1,42 @@
 import matplotlib.pyplot as plt
-import numpy as np
 
-# Points A(7,10), B(-2,5), C(3,4)
-A = np.array([7, 10])
-B = np.array([-2, 5])
-C = np.array([3, 4])
+# Vertices of the triangle
+A = (7, 10)
+B = (-2, 5)
+C = (3, 4)
 
-# Function to calculate distance between two points
-def distance(p1, p2):
-    return np.sqrt((p2[0] - p1[0])**2 + (p2[1] - p1[1])**2)
+# Midpoints of sides
+D = ((A[0] + B[0]) / 2, (A[1] + B[1]) / 2)
+E = ((B[0] + C[0]) / 2, (B[1] + C[1]) / 2)
+F = ((A[0] + C[0]) / 2, (A[1] + C[1]) / 2)
 
-# Calculate distances
-AB = distance(A, B)
-BC = distance(B, C)
-CA = distance(C, A)
+# Plotting the triangle and midpoints
+fig, ax = plt.subplots()
 
-# Plotting the triangle
-plt.figure(figsize=(6, 6))
-plt.plot([A[0], B[0]], [A[1], B[1]], 'b-', label="AB")
-plt.plot([B[0], C[0]], [B[1], C[1]], 'b-', label="BC")
-plt.plot([C[0], A[0]], [C[1], A[1]], 'b-', label="CA")
+# Plot the triangle ABC
+triangle = plt.Polygon([A, B, C], closed=True, fill=None, edgecolor='black', label='Triangle ABC')
 
-# Annotating points
-plt.text(A[0], A[1], 'A(7,10)', fontsize=12, ha='right', va='bottom')
-plt.text(B[0], B[1], 'B(-2,5)', fontsize=12, ha='right', va='top')
-plt.text(C[0], C[1] - 0.2, 'C(3,4)', fontsize=12, ha='center', va='top')
+# Plot the midpoints D, E, F
+ax.scatter(*zip(A, B, C, D, E, F), color='gray')
+ax.text(A[0], A[1], 'A', fontsize=12, ha='left', va='top', color='g')
+ax.text(B[0], B[1], 'B', fontsize=12, ha='right', va='top', color='r')
+ax.text(C[0], C[1], 'C', fontsize=12, ha='left', va='top', color='b')
+ax.text(D[0], D[1], 'D', fontsize=12, ha='right', va='bottom', color='b')
+ax.text(E[0], E[1], 'E', fontsize=12, ha='right', va='bottom', color='g')
+ax.text(F[0], F[1], 'F', fontsize=12, ha='right', va='bottom', color='r')
 
-# Highlighting the vertices
-plt.scatter([A[0], B[0], C[0]], [A[1], B[1], C[1]], color='red')
+# Plot the medians AD, BE, CF
+plt.plot([A[0], E[0]], [A[1], E[1]], color='g', label='Median AE')
+plt.plot([B[0], F[0]], [B[1], F[1]], color='r', label='Median BF')
+plt.plot([C[0], D[0]], [C[1], D[1]], color='b', label='Median CD')
 
-# Displaying distances on the plot with offset adjustments
-mid_AB = (A + B) / 2
-mid_BC = (B + C) / 2
-mid_CA = (C + A) / 2
-
-# Adjusting text placement for better spacing
-plt.text(mid_AB[0], mid_AB[1] + 0.6, f'{AB:.2f}', fontsize=12, color='blue', ha='center')
-plt.text(mid_BC[0], mid_BC[1] - 0.6, f'{BC:.2f}', fontsize=12, color='blue', ha='center')
-plt.text(mid_CA[0], mid_CA[1] - 1.3, f'{CA:.2f}', fontsize=12, color='blue', ha='center')
-
-# Setting plot limits and labels
-plt.xlim(-5, 10)
-plt.ylim(0, 12)
-plt.gca().set_aspect('equal', adjustable='box')
-plt.xlabel('x')
-plt.ylabel('y')
-plt.title('Triangle Check')
-
-# Show the plot
+# Labels and settings
+ax.add_patch(triangle)
+ax.set_aspect('equal', adjustable='box')
+ax.set_xlabel('x')
+ax.set_ylabel('y')
+plt.title('Triangle ABC with Midpoints and Medians')
 plt.grid(True)
+plt.legend()
 plt.show()
 
