@@ -1,0 +1,100 @@
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal]{IEEEtran}
+\usepackage[a4paper, margin=10mm, onecolumn]{geometry}
+\usepackage{lmodern} % Ensure lmodern is loaded for pdflatex
+\usepackage{tfrupee} % Include tfrupee package
+
+\setlength{\headheight}{1cm} % Set the height of the header box
+\setlength{\headsep}{0mm}  % Set the distance between the header box and the top of the text
+
+\usepackage{gvv-book}
+\usepackage{gvv}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+% \usepackage{gvv}                                        
+\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+
+\begin{document}
+
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+
+\title{12.389}
+\author{EE25BTECH11064 - Yojit Manral}
+
+\maketitle
+% \maketitle
+% \newpage
+% \bigskip
+{\let\newpage\relax\maketitle}
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\setlength{\intextsep}{10pt} % Space between text and float
+
+\textbf{Question:}\\
+Characteristic equation of the matrix with eigenvalue $\lambda$ is
+\begin{align}
+    \vec{A} = \myvec{2&\sqrt{2}\\ \sqrt{2}&1}
+\end{align}
+\begin{enumerate}[label=(\alph*)]
+\begin{multicols}{4}
+    \item $\lambda^2+3\lambda+4=0$
+    \item $\lambda^2+3\lambda-2=0$
+    \item $\lambda^2-3\lambda=0$
+    \item $\lambda^2+3\lambda=0$
+\end{multicols}
+\end{enumerate}
+
+\textbf{Solution:}\\
+$\longrightarrow$ This problem statement can be solved via the following two methods:
+\begin{enumerate}[label=\arabic*)]
+    \item {
+    The characteristic equation can be given by
+    \begin{align}
+        char(\vec{A}) \implies |\vec{A}-\lambda\vec{I}| &= 0 \\
+        \left|\begin{array}{cc}2-\lambda&\sqrt{2}\\ \sqrt{2}&1-\lambda\end{array}\right| &= 0 \\
+        (\lambda-2)(\lambda-1)-2 &= 0 \\
+        \lambda^2-3\lambda &= 0
+    \end{align}
+    }
+    \item {
+    Another method to find characteristic equation for a $2\times2$ matrix is
+    \begin{align}
+        char(\vec{M}_{2\times2}) \implies \lambda^2-trace(\vec{M})\lambda+det(\vec{M}) &= 0
+    \end{align}
+    For the given matrix $\vec{A}$, we have
+    \begin{align} trace(\vec{A}) = 3 && det(\vec{A}) = 0 \end{align}
+    From (6) and (7), we get
+    \begin{align}
+        char(\vec{A}) \implies \lambda^2-3\lambda = 0
+    \end{align}
+    }
+\end{enumerate}
+$\longrightarrow$ Therefore, \textit{(c) $\lambda^2-3\lambda=0$} is the correct option.
+\end{document}

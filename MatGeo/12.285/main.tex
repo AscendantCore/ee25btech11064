@@ -1,0 +1,100 @@
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal]{IEEEtran}
+\usepackage[a4paper, margin=10mm, onecolumn]{geometry}
+\usepackage{lmodern} % Ensure lmodern is loaded for pdflatex
+\usepackage{tfrupee} % Include tfrupee package
+
+\setlength{\headheight}{1cm} % Set the height of the header box
+\setlength{\headsep}{0mm}  % Set the distance between the header box and the top of the text
+
+\usepackage{gvv-book}
+\usepackage{gvv}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+% \usepackage{gvv}                                        
+\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+
+\begin{document}
+
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+
+\title{12.285}
+\author{EE25BTECH11064 - Yojit Manral}
+
+\maketitle
+% \maketitle
+% \newpage
+% \bigskip
+{\let\newpage\relax\maketitle}
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\setlength{\intextsep}{10pt} % Space between text and float
+
+\textbf{Question:}\\
+Let $\alpha = e^{2\pi i/5}$ and the matrix
+\begin{align}
+    \vec{M} = \myvec{1&\alpha&\alpha^2&\alpha^3&\alpha^4\\0&\alpha&\alpha^2&\alpha^3&\alpha^4\\0&0&\alpha^2&\alpha^3&\alpha^4\\0&0&0&\alpha^3&\alpha^4\\0&0&0&0&\alpha^4}
+\end{align}
+Then the trace of the matrix $\vec{I} + \vec{M} + \vec{M}^2$ is
+\begin{enumerate}[label=(\alph*)]
+\begin{multicols}{4}
+    \item $5$
+    \item $0$
+    \item $3$
+    \item $-5$
+\end{multicols}
+\end{enumerate}
+
+\textbf{Solution:}\\
+$\rightarrow$ As $\alpha$ is the fifth root of unity, we have
+\begin{align}
+    \alpha^5 - 1 = 0 \implies 1 + \alpha + \alpha^2 + \alpha^3 + \alpha^4 = 0
+\end{align}
+$\rightarrow$ According to the properties of trace
+\begin{align}
+    trace(\vec{A}_{n\times n}) &\triangleq \sum_{i=1}^{n} a_{ii} \\
+    trace(\vec{I}+\vec{M}+\vec{M}^2) &= trace(\vec{I})+trace(\vec{M})+trace(\vec{M}^2) \\
+    trace(\vec{I}_{5\times5}) &= \sum_{i=1}^{5} 1 = 5
+\end{align}
+$\rightarrow$ From (1) and (3), we get
+\begin{align}
+    trace(\vec{M}) = \sum_{i=1}^{5} m_{ii} = 1 + \alpha + \alpha^2 + \alpha^3 + \alpha^4
+\end{align}
+$\rightarrow$ Since $\vec{M}$ is an upper triangular matrix
+\begin{align}
+    trace(\vec{M}^2) = \sum_{i=1}^{5} m_{ii}^2 = (1)^2 + (\alpha)^2 + (\alpha^2)^2 + (\alpha^3)^2 + (\alpha^4)^2
+\end{align}
+$\rightarrow$ On adding (5), (6), and (7), using (2) and (4), we get
+\begin{align}
+    trace(\vec{I}+\vec{M}+\vec{M}^2) &= 5 + (1 + \alpha + \alpha^2 + \alpha^3 + \alpha^4) + (1 + \alpha^2 + \alpha^4 + \alpha\alpha^5 + \alpha^3\alpha^5) \\
+    &= 5 + (0) + (0) = 5
+\end{align}
+$\rightarrow$ Therefore, (a) 5 is the correct option.
+\end{document}

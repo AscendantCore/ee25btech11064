@@ -1,0 +1,76 @@
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal]{IEEEtran}
+\usepackage[a4paper, margin=10mm, onecolumn]{geometry}
+\usepackage{lmodern} % Ensure lmodern is loaded for pdflatex
+\usepackage{tfrupee} % Include tfrupee package
+
+\setlength{\headheight}{1cm} % Set the height of the header box
+\setlength{\headsep}{0mm}  % Set the distance between the header box and the top of the text
+
+\usepackage{gvv-book}
+\usepackage{gvv}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+% \usepackage{gvv}                                        
+\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+
+\begin{document}
+
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+
+\title{12.597}
+\author{EE25BTECH11064 - Yojit Manral}
+
+\maketitle
+% \maketitle
+% \newpage
+% \bigskip
+{\let\newpage\relax\maketitle}
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\setlength{\intextsep}{10pt} % Space between text and float
+
+\textbf{Question:}\\
+The value of p such that the vector $\myvec{1\\2\\3}$ is an eigenvector of the matrix $\myvec{4&1&2\\p&2&1\\14&-4&10}$ is \rule{0.5cm}{0.15mm} .
+
+\textbf{Solution:}\\
+$\rightarrow$ If the vector is an eigenvector for the matrix, it satisfies
+\begin{align}
+    \vec{A}\vec{x} &= \lambda\vec{x} \\
+    \myvec{4&1&2\\p&2&1\\14&-4&10} \myvec{1\\2\\3} &= \lambda \myvec{1\\2\\3} \hspace{0.2cm} \exists \lambda \in R \\
+    \myvec{12\\p+7\\36} &= \lambda \myvec{1\\2\\3}
+\end{align}
+$\rightarrow$ Putting $\lambda = 12$ to satisfy (3), we get
+\begin{align}
+    \myvec{12\\p+7\\36} &= \myvec{12\\24\\36} \\
+    \implies p + 7 &= 24 \\
+    \implies p &= 15
+\end{align}
+\end{document}

@@ -1,0 +1,98 @@
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal]{IEEEtran}
+\usepackage[a4paper, margin=10mm, onecolumn]{geometry}
+\usepackage{lmodern} % Ensure lmodern is loaded for pdflatex
+\usepackage{tfrupee} % Include tfrupee package
+
+\setlength{\headheight}{1cm} % Set the height of the header box
+\setlength{\headsep}{0mm}  % Set the distance between the header box and the top of the text
+
+\usepackage{gvv-book}
+\usepackage{gvv}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+% \usepackage{gvv}                                        
+\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+
+\begin{document}
+
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+
+\title{12.701}
+\author{EE25BTECH11064 - Yojit Manral}
+
+\maketitle
+% \maketitle
+% \newpage
+% \bigskip
+{\let\newpage\relax\maketitle}
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\setlength{\intextsep}{10pt} % Space between text and float
+
+\textbf{Question:}\\
+Let $ (\cdot, \cdot) : R^n \times R^n \rightarrow R $ be the inner product. Consider
+\begin{align*}
+    P &: |(\vec{u}, \vec{v})| \leq \frac{(\vec{u}, \vec{u})+(\vec{v}, \vec{v})}{2} \forall \vec{u}, \vec{v}. \\
+    Q &: \text{If }(\vec{u}, \vec{v}) = (2\vec{u}, \vec{v}) \hspace{0.2cm} \forall \vec{v} \text{, then }\vec{u} = 0.
+\end{align*}
+Then
+\begin{enumerate}[label=(\alph*)]
+\begin{multicols}{2}
+    \item both P, Q are true
+    \item P is true, Q is false
+    \item P is false, Q is true
+    \item both P, Q are false
+\end{multicols}
+\end{enumerate}
+
+\textbf{Solution:}\\
+$\rightarrow$ We can take the inner product as the dot product, since all inner products have the same properties as satisfied by the dot product.
+\begin{align}
+    \implies (\vec{u}, \vec{v}) = \vec{u}^T\vec{v}
+\end{align}
+$\rightarrow$ For Statement P
+\begin{align}
+    |(\vec{u}, \vec{v})| &\leq \norm{\vec{u}}\norm{\vec{v}} && \text{(Cauchy-Schwarz Inequality)} \\
+    \frac{(\vec{u}, \vec{u}) + (\vec{v}, \vec{v})}{2} &= \frac{\norm{\vec{u}}^2 + \norm{\vec{v}}^2}{2} \\
+    \norm{\vec{u}}\norm{\vec{v}} &\leq \frac{\norm{\vec{u}}^2 + \norm{\vec{v}}^2}{2} && \text{(G.M. $\leq$ A.M.)} \\
+    \implies |(\vec{u}, \vec{v})| &= \frac{(\vec{u}, \vec{u})+(\vec{v}, \vec{v})}{2} && \implies \textit{P is true}
+\end{align}
+$\rightarrow$ For Statement Q
+\begin{align}
+    (\vec{u}, \vec{v}) &= (2\vec{u}, \vec{v}) && (\forall \vec{v} \in R^n) \\
+    (\vec{u}, \vec{v}) - (2\vec{u}, \vec{v}) &= 0 \\
+    (\vec{u} - 2\vec{u}, \vec{v}) &= 0 \\
+    (-\vec{u}, \vec{v}) &= 0 && (\forall \vec{v} \in R^n) \\
+    \implies \vec{u} &= 0 && \implies \textit{Q is true}
+\end{align}
+
+$\longrightarrow$ Therefore, \textit{(b) both P, Q are true} is the correct option.
+\end{document}
